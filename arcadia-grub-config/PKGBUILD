@@ -1,0 +1,20 @@
+# Maintainer: Dhruv Chawla <https://github.com/dc03>
+pkgname=arcadia-grub-config
+_destname1="/"
+pkgver=1.00
+pkgrel=1
+pkgdesc="grub theme for arcadia"
+arch=('any')
+url="https://github.com/ArcadiaLinux"
+license=('GPL3')
+makedepends=('git')
+depends=(grub)
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}/${pkgname}")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r ${srcdir}/${pkgname}${_destname1}* ${pkgdir}${_destname1}
+}
