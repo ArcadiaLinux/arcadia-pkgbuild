@@ -16,11 +16,11 @@ jobs:
     steps:
       - name: List all files
         run: |
-          ll
+          ls -al
           echo Nishal
-          ll /home
+          ls -al /home
       - name: Arcadia PKGBUILDs
         id: build-pkg
         uses: ArcadiaLinux/arcadia-makepkg@v1
         with:
-          path: "./arcadia-i3-config"
+          path: "/github/workspace/arcadia-i3-config"
