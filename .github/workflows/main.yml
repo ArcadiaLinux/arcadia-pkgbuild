@@ -14,6 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to perform pkgbuild
     steps:
+      - name: List all files
+        run: |
+          ll
+          echo Nishal
+          ll /home
       - name: Arcadia PKGBUILDs
         id: build-pkg
         uses: ArcadiaLinux/arcadia-makepkg@v1
