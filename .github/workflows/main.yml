@@ -16,9 +16,8 @@ jobs:
     steps:
       - name: List all files
         run: |
-          ls -al /home/runner/work/arcadia-pkgbuild/arcadia-pkgbuild
+          ls -al /home/runner/work/arcadia-pkgbuild
           echo Nishal
-          ls -al /github/workspace
       - name: Arcadia PKGBUILDs
         id: build-pkg
         uses: ArcadiaLinux/arcadia-makepkg@v1
