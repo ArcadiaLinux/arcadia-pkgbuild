@@ -1,0 +1,21 @@
+name: PKGBUILDCI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  pkgbuild_job:
+    runs-on: ubuntu-latest
+    name: A job to perform pkgbuild
+    steps:
+      - name: Arcadia PKGBUILDs
+        id: build-pkg
+        uses: ArcadiaLinux/arcadia-makepkg@v1
+        with:
+          path: "arcadia-pkgbuild/arcadia-i3-config"
