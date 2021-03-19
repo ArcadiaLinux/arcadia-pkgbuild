@@ -14,12 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to perform pkgbuild
     steps:
-      - name: List all files
-        run: |
-          ls -al /home/runner/work/arcadia-pkgbuild
-          echo Nishal
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Arcadia PKGBUILDs
         id: build-pkg
-        uses: ArcadiaLinux/arcadia-makepkg@v1
+        uses: ArcadiaLinux/arcadia-makepkg@v1.1
         with:
-          path: "/home/runner/work/arcadia-pkgbuild/arcadia-pkgbuild/arcadia-i3-config"
+          path: "$GITHUB_WORKSPACE/arcadia-i3-config"
